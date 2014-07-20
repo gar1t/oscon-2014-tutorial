@@ -1,6 +1,25 @@
 # Erlang Tutorial - OSCON 2014
 
+We'll be using this project during the tutorial. If you plan on following
+along, you'll need this project.
+
+Grab it here:
+
+    $ git clone https://github.com/gar1t/oscon-2014-tutorial.git
+
+Note if you're using Windows and don't otherwise have a way to run posix style
+bash scripts and GNU make, consider using Vagrant to run a virtual machine with
+Ubuntu on your Windows OS. Refer to *Using Vagrant* below for details.
+
 ## Using Vagrant
+
+If you don't have a working Erlang development environment, you can use the
+steps to setup a Vagrant box on your computer running Ubuntu and Erlang 17.
+
+Depending on your Internet connection, it may take a while (e.g. over 30 - 60
+minutes) to download the Vagrant box (step 2 below). Of course you can enjoy
+coffee and other things while this is downloading. The rest of the steps should
+take no more than 10 - 15 minutes to complete.
 
 ### Step 1 - Install Vagrant
 
@@ -26,6 +45,11 @@ file:
     $ mkdir erlang-tutorial
 	$ cd erlang-tutorial
 	$ vagrant init
+
+If you want to forward X11 from the Vagrant server (used for graphical
+applications), add this line to the `Vagrantfile` in your project:
+
+    config.ssh.forward_x11 = true
 
 ### Step 4 - Start the Vagrant Server
 
