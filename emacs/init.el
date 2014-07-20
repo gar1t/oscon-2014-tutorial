@@ -1,0 +1,10 @@
+(setq inhibit-splash-screen t)
+(setq backup-inhibited t)
+(setq auto-save-default nil)
+(setq default-fill-column 79)
+(setq indent-tabs-mod nil)
+(set-default 'truncate-lines t)
+(menu-bar-mode -1)
+(global-set-key (kbd "C-x RET") 'compile)
+(global-set-key (kbd "M-g f") 'imenu)
+
