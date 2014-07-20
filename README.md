@@ -50,6 +50,10 @@ file:
 	$ cd erlang-tutorial
 	$ vagrant init
 
+Change image in configuration file to:
+
+    config.vm.box = "ubuntu-erlang"
+
 If you want to forward X11 from the Vagrant server (used for graphical
 applications), add this line to the `Vagrantfile` in your project:
 
