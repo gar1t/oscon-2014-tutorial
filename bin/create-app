@@ -1,0 +1,48 @@
+#!/bin/sh -e
+
+template_app_id=sample
+
+usage() {
+    echo "usage: create-app APP_ID APP_DIR"
+    exit 1
+}
+
+script_error() {
+    echo "ERROR: $1"
+    exit 1
+}
+
+create_app_dir() {
+    if [ -e $app_dir ]; then
+	script_error "$app_dir exists"
+    fi
+    echo "Creating $app_dir"
+    mkdir -p $app_dir
+}
+
+copy_template() {
+    echo "Copying project files"
+    cp -a templates/e2-app/* $app_dir/
+}
+
+replace_app_id() {
+    echo "Updating project files"
+    cd $app_dir
+    sed -i "s/$template_app_id/$app_id/g" Makefile
+    cd src
+    for f in `ls $template_app_id*`; do
+	new_f=`echo $f | sed s/$template_app_id/$app_id/`
+	mv $f $new_f
+    done
+    sed -i "s/$template_app_id/$app_id/g" *
+}
+
+if [ "$#" -ne 2 ]; then
+    usage
+fi
+app_id=$1
+app_dir=$2
+
+create_app_dir
+copy_template
+replace_app_id
