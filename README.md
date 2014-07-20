@@ -11,6 +11,10 @@ Note if you're using Windows and don't otherwise have a way to run posix style
 bash scripts and GNU make, consider using Vagrant to run a virtual machine with
 Ubuntu on your Windows OS. Refer to *Using Vagrant* below for details.
 
+If you run into any problems please create a
+[New Issue](https://github.com/gar1t/oscon-2014-tutorial/issues/new) for the
+project.
+
 ## Using Vagrant
 
 If you don't have a working Erlang development environment, you can use the
