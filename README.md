@@ -50,7 +50,7 @@ file:
 	$ cd erlang-tutorial
 	$ vagrant init
 
-Change image in configuration file to:
+Change image in `Vagrantfile` to:
 
     config.vm.box = "ubuntu-erlang"
 
