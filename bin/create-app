@@ -1,5 +1,6 @@
 #!/bin/sh -e
 
+home=$(dirname $(dirname $0))
 template_app_id=sample
 
 usage() {
@@ -22,7 +23,7 @@ create_app_dir() {
 
 copy_template() {
     echo "Copying project files"
-    cp -a templates/e2-app/* $app_dir/
+    cp -a $home/templates/e2-app/* $app_dir/
 }
 
 replace_app_id() {
