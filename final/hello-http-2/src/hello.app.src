@@ -1,0 +1,10 @@
+%%% -*-erlang-*-
+{application, hello,
+ [{description, "A hello e2 app"},
+  {vsn, "0.0.0"},
+  {modules, []},
+  {registered, []},
+  {applications, [kernel, stdlib, sasl]},
+  {mod, {e2_application, [hello_app]}},
+  {env, []}
+ ]}.
